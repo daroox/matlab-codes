@@ -14,6 +14,7 @@ cutoff_ch1=300;
 start_ch2 =200;
 cutoff_ch2=300;
 U=0.5025;
+C = 500;
  %  needed to get rid of junk in the caen files
 %tmp = [1:2044]';
 u=[2,4];
@@ -27,10 +28,10 @@ for k = 0:numel(files)-1
         ch = Data(u,:);
         ch1=ch(1,:);
         ch1=ch1(start_ch1:cutoff_ch1);
-        ch1=(700./(ch1.^2))-U;
+        ch1=(C./(ch1.^2))-U;
         ch2 = ch(2,:);
         ch2=ch2(start_ch2:cutoff_ch2); 
-        ch2=(700./(ch2.^2))-U;
+        ch2=(C./(ch2.^2))-U;
         CH1=[CH1 ch1'];
         CH2=[CH2 ch2'];
  %else
