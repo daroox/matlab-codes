@@ -1,26 +1,25 @@
-% (c) Fawad Karimi 2017
-% this code takes the caen files and plots them
 
-%% begin 
-clear all
 %% (c) Fawad Karimi 2017
 %   this script plots the THz-scan data from caen Digitizer
 
-%% clear junk and define variables and start & cutoff values
 tic
 clear all
 close all
-%find out the number of files 
+% find the number of files/ steps 
 files = dir('*.dat');
 
+%% USER DEFINED Parameters
+res = 25;  % resolution of each step
 start_ch1 =200; % traces recorded are too long
 cutoff_ch1=300;
 start_ch2 =200;
 cutoff_ch2=300;
-U=0.5025;
- %  needed to get rid of junk in the caen files
-%tmp = [1:2044]';
-u=[2,4];
+clims1 = [730 760]; % for colorbar
+clims2 = [400 600]; % for colorbar
+U=0.5025; % find this parameter by simulation
+
+%%
+u=[2,4]; %  needed to get rid of junk in the caen files
 CH1=[];
 CH2=[];
 for k = 0:numel(files)-1
@@ -41,16 +40,29 @@ for k = 0:numel(files)-1
 	%	fprintf('File %s does not exist.\n', datFile);
   %  end
 end
-%   plott scans side by side 
+
+%% Define x and y axes for both plots
+
+RangeOfStageinTime = (numel(files)*res)/1000; %picosecs
+% define delay axis for the plot
+d =0:RangeOfStageinTime;
+% define y-axis in ns
+y1 = start_ch1:cutoff_ch1;
+y2 = start_ch2:cutoff_ch2;
+
+%%   plott scans side by side 
+
 subplot(1,2,1);
-imagesc(CH1);
+imagesc(d,y1,CH1,clims1);
+colorbar
 title('channel 1')
-xlabel('number of steps')
+xlabel('Delay (ps)')
 ylabel('time of flight (ns)')
+
 subplot(1,2,2);
-imagesc(CH2);
+imagesc(d,y2,CH2,clims2);
+colorbar
 title('channel 2')
-xlabel('number of steps')
+xlabel('Delay (ps)')
 ylabel('time of flight (ns)')
-  
-toc %time keeping
+toc
