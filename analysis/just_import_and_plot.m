@@ -30,13 +30,13 @@ subplot(1,2,1);
 imagesc(CH1);
 colorbar
 title('channel 1')
-xlabel('Delay (ps)')
+xlabel('motor steps, w/o the step res')
 ylabel('time of flight (ns)')
 
 subplot(1,2,2);
 imagesc(CH2);
 colorbar
 title('channel 2')
-xlabel('Delay (ps)')
+xlabel('motor steps, w/o the step res')
 ylabel('time of flight (ns)')
 toc
