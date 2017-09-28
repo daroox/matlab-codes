@@ -10,7 +10,7 @@ y = exp(-1.3*d) + 0.05*randn(size(d));
 fun=@(r)exp(-d*r)-y;
 x0=4; % Arbitrarily choose an initial guess x0 = 4.
 
-% start the optimization function, which returns a value to x
+% start the optimization function, which returns a value to x variable
 x = lsqnonlin(fun,x0)
 
 plot(d,y,'ko',d,exp(-d*x),'b-')
