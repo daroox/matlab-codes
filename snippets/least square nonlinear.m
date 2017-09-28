@@ -7,7 +7,7 @@ d = linspace(0,3); % creates hundred evenly spaced pts betw 0 and 3
 y = exp(-1.3*d) + 0.05*randn(size(d));
 
 % now define your guess function, that could fit the data! 
-fun=@(r)exp(-d*r)-y;
+fun = @(r)exp(-d*r) - y;  % notice that the exp function is substracted by y! we are minimizing
 x0=4; % Arbitrarily choose an initial guess x0 = 4.
 
 % start the optimization function, which returns a value to x variable
