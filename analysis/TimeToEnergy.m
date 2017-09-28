@@ -15,6 +15,11 @@ start_ch2 =200;
 cutoff_ch2=300;
 U=0.5025;
 C = 500;
+td=51.4;  % Position des Prompt
+t0=-8.3893; %
+
+%t_ns=0.1*x; % x is the length of time x=1:length of time %. depends on temp res of oscilloscope 10 GS/s=0.1; 20 GS/s=0.05
+
  %  needed to get rid of junk in the caen files
 %tmp = [1:2044]';
 u=[2,4];
