@@ -2,7 +2,9 @@
 % https://de.mathworks.com/help/matlab/ref/function.html?searchHighlight=function&s_tid=doc_srchtitle
 
 % writing a function has the following conventions
-% one function per script; functions defined in a function file are just locally available
+% one function per script
+% function definition starts with the keyword f u n c t i o n   and  ends with the keyword   e n d
+%functions defined in a function file are just locally available
 % the following function for example should be saved as stat.m
 % it takes one argument and returns two values
 
