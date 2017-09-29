@@ -1,4 +1,6 @@
 
+% https://de.mathworks.com/help/matlab/ref/function.html?searchHighlight=function&s_tid=doc_srchtitle
+
 % writing a function has the following conventions
 % one function per script; functions defined in a function file are just locally available
 % the following function for example should be saved as stat.m
