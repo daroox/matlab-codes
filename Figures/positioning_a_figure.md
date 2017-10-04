@@ -1,6 +1,7 @@
 ### Figure Positioning while plotting
 
-in the commandline type in  `figure(1)` the move the empty window to the position you like the type in `p = get(gcf, 'Position')`
+Type in the commandline `figure(1)` the move the empty window to a position you like then type
+`p = get(gcf, 'Position')`
 
 ```matlab
 p = [1939 457 819 646];
