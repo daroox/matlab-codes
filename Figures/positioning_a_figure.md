@@ -1,7 +1,7 @@
 ### Figure Positioning while plotting
 
 Type in the commandline `figure(1)` the move the empty window to a position you like then type
-`p = get(gcf, 'Position')`
+`p = get(gcf, 'Position')`. After getting the position one can copy the position and write it in the script.
 
 ```matlab
 p = [1939 457 819 646];
