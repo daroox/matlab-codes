@@ -1,5 +1,10 @@
 ![image](T2E.jpg)
 ----
+#### Peakfit Properties
+
+´´´ C
+[FitResults, GOF, baseline, coeff, residuals, xi, yi, BootResults]=peakfit(signal, center, window, NumPeaks, peakshape, extra, NumTrials, start, AUTOZERO, fixedparameters, plots, bipolar, minwidth, DELTA, clipheight))
+´´´
 
 The screen display is shown on the right; the upper panel shows the data as blue dots, the combined model as a red line (ideally overlapping the blue dots), and the model components as green lines. The dotted magenta lines are the first-guess peak positions for the last fit. The lower panel shows the residuals (difference between the data and the model).
 
