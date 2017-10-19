@@ -13,10 +13,10 @@ files =dir('*.dat');
 s = size(files,1);
 fac = 1;     %where to start plotting traces
 myformat = '%3.4f \t %3.4f\n';
-fileName = 'pulsewidths.txt';
+fileName = 'streaked-CH1.txt';
 
 for k = 0:s-1
-    datFile = sprintf('C2TOF2_Xe_zero crossing_Lower harmonic xuv thz0000%d.dat',k);
+    datFile = sprintf('C1TOF1_Xe_zero crossing_Lower harmonic xuv thz0000%d.dat',k);
          D = load(datFile);
          t = D(fac:end,1)*1e9; 
          values = D(fac:end,2)*-1000;
@@ -34,4 +34,4 @@ fprintf(fileID,'%6s %12s\r\n','% av1','av2');%header
 fprintf(fileID,myformat,mean(P(1:3,4)),mean(P(4:6,4)));
 fclose(fileID);
 P
-copyfile pulsewidths.txt ..\..
+copyfile *.txt ..\..
