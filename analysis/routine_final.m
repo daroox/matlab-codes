@@ -34,3 +34,4 @@ fprintf(fileID,'%6s %12s\r\n','% av1','av2');%header
 fprintf(fileID,myformat,mean(P(1:3,4)),mean(P(4:6,4)));
 fclose(fileID);
 P
+copyfile pulsewidths.txt ..\..
