@@ -7,6 +7,7 @@ peaks;        % make a random 3d plot
 view(0,90);   % adjust view to match spectrogram
 colormap jet; % set colormap (match this in pgfplots)
 colormap(brewermap([],'YlGnBu'))
+%colormap(brewermap([],'*YlGnBu'))	%  reverse
 title('');    % clear title
 
 % Clean plot of any labels/annotations/text
