@@ -18,7 +18,12 @@ The screen display is shown on the right; the upper panel shows the data as blue
   
   ##### peakfit(signal,center,window,NumPeaks,peakshape)
   ![image](ShapeDemo.png)
-Number or vector that specifies the peak shape(s) of the model:  1=unconstrained Gaussian, 2=unconstrained Lorentzian, 3=logistic distribution, 4=Pearson, 5=exponentially broadened Gaussian; 6=equal-width Gaussians, 7=equal-width Lorentzians, 8=exponentially broadened equal-width Gaussians, 9=exponential pulse, 10= up-sigmoid (logistic function), 11=fixed-width Gaussians, 12=fixed-width Lorentzians, 13=Gaussian/Lorentzian blend; 14=bifurcated Gaussian, 15=Breit-Wigner-Fano resonance; 16=Fixed-position Gaussians; 17=Fixed-position Lorentzians; 18=exponentially broadened Lorentzian; 19=alpha function; 20=Voigt profile; 21=triangular; 23=down-sigmoid; 25=lognormal distribution; 26=linear baseline (see Example 28); 28=polynomial (extra=polynomial order; Example 30); 29=articulated linear segmented (see Example 29);  30=independently-variable alpha Voigt; 31=independently-variable time constant ExpGaussian; 32=independently-variable Pearson; 33=independently-variable Gaussian/Lorentzian blend;  34=fixed-width Voigt; 35=fixed-width Gaussian/Lorentzian blend; 36=fixed-width exponentially-broadened Gaussian; 37=fixed-width Pearson; 38= independently-variable time constant ExpLorentzian; 39= alternative independently-variable time constant ExpGaussian (see Example 39 below); 40=sine wave;  41=rectangle; 42=flattened Gaussian; 43=Gompertz function (3 parameter logistic: Bo*exp(-exp((Kh*exp(1)/Bo)*(L-t)+1))); 44=1-exp(-k*x);  45: Four-parameter logistic y = maxy*(1+(miny-1)/(1+(x/ip)^slope)); 46=quadratic baseline (see Example 38); 47=blackbody emission; 48=equal-width exponential pulse. (The function ShapeDemo demonstrates most of the basic peak shapes graphically, showing the variable-shape peaks as multiple lines).
+Shape 31 reports the peak height and position as that of the original Gaussian before broadening, whereas shape 39 reports the peak height of the broadened result
+```
+load DataMatrix3;
+[FitResults,FitError] = peakfit(DataMatrix3, 1860.5, 364, 2, 31, 32.9731, 5,[1810 60 30 1910 60 30])
+```
+
 ##### Used by me currently:  peakfit(signal,center,window,NumPeaks,peakshape, extra, NumTrials)
 ----
 #### Anonymous function
